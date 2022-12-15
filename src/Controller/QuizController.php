@@ -11,7 +11,12 @@ class QuizController extends AbstractController
     #[Route('/quiz/', name: 'quiz_home')]
     public function home(): Response
     {
-        return $this->render('quiz/index.html.twig');
+        $name = "Jean-Bite";
+
+        
+        return $this->render('quiz/index.html.twig', [
+            'name' => $name
+        ]);
     }
 
 
