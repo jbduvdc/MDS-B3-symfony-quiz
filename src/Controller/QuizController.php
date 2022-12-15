@@ -8,18 +8,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class QuizController extends AbstractController
 {
-    #[Route('/quiz/', name: 'quiz_home')]
+    #[Route('/quiz', name: 'quiz_home')]
     public function home(): Response
     {
-        $name = "Jean-Bite";
+        $quizzes = [
+            ['category' => 'film', 'title' => 'Harry Potter'],
+            ['category' => 'culture', 'title' => 'Les vins']
+        ];
 
         
         return $this->render('quiz/index.html.twig', [
-            'name' => $name
+            'quizzes' => $quizzes
         ]);
     }
 
-    #[Route('/quiz/{qqchose}', name: 'quiz_home')]
+    #[Route('/quiz/{qqchose}', name: 'quiz_single')]
     public function single_quiz($qqchose): Response
     {
         return $this->render('quiz/single.html.twig', [

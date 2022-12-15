@@ -9,15 +9,9 @@
 </head>
 <body>
 
-    {{ include('default/_nav.html.twig') }}
-
-    <h1>Bienvenue les gens sur mon app de quiz!</h1>
-
-    <p>Blablalbla</p>
-
-    <img src="{{asset('img/pimkie-pie.jpg')}}" alt="">
-
-    {{ name }}
+    {% for quiz in quizzes %}
+        <p>{{quiz.category}}: {{quiz.title}}</p>
+    {% endfor %}
 
 
 </body>
