@@ -19,5 +19,13 @@ class QuizController extends AbstractController
         ]);
     }
 
+    #[Route('/quiz/{qqchose}', name: 'quiz_home')]
+    public function single_quiz($qqchose): Response
+    {
+        return $this->render('quiz/single.html.twig', [
+            'qqchose' => $qqchose
+        ]);
+    }
+
 
 }
